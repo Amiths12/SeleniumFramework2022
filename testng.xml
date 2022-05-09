@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/amith/IdeaProjects/SeleniumFramework2022/src/test/java/TestScripts/TC_RF_001.java">
+        <classes>
+            <class name="TestScripts.TC_RF_001">
+                <methods>
+                    <include name="TC_RF_001"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/amith/IdeaProjects/SeleniumFramework2022/src/test/java/TestScripts/TC_RF_002.java">
+        <classes>
+            <class name="TestScripts.TC_RF_002">
+                <methods>
+                    <include name="invalidLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/amith/IdeaProjects/SeleniumFramework2022/src/test/java/TestScripts/TC_RF_003.java">
+        <classes>
+            <class name="TestScripts.TC_RF_003">
+                <methods>
+                    <include name="invalidMailTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/amith/IdeaProjects/SeleniumFramework2022/src/test/java/TestScripts/TC_RF_004.java">
+        <classes>
+            <class name="TestScripts.TC_RF_004">
+                <methods>
+                    <include name="forgotPasswordTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

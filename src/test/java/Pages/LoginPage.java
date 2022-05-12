@@ -15,9 +15,11 @@ import org.testng.Assert;
 import javax.naming.directory.Attribute;
 
 public class LoginPage extends BasePage {
+    WebDriver driver;
     public LoginPage(WebDriver driver) {
         super(driver);
     }
+
 
     @FindBy(id = "input-email")
     WebElement emailId;
@@ -33,6 +35,34 @@ public class LoginPage extends BasePage {
     WebElement forgotPasswordMsg;
     @FindBy(xpath = "//input[@value='qwerty']")
     WebElement qwertyInput;
+    @FindBy(xpath = "//a[text()='Change your password']")
+    WebElement passwordChangeField;
+    @FindBy(xpath = "//input[@name='password']")
+    WebElement newPasswordTextField;
+    @FindBy(xpath = "//input[@name='confirm']")
+    WebElement confirmNewPasswordTextField;
+    @FindBy(xpath = "//input[@value='Continue']")
+    WebElement confirmButton;
+    @FindBy(xpath = "//span[text()='My Account']")
+    WebElement myAccountMenu;
+    @FindBy(xpath = "(//a[text()='Logout'])[1]")
+    WebElement logoutButton;
+    @FindBy(xpath = "(//a[text()='Login'])[1]")
+    WebElement reloginButton;
+    @FindBy(xpath = "//a[text()='Continue']")
+    WebElement continueButton;
+    @FindBy(xpath = "//a[text()='Account']")
+    WebElement accountBreadcrump;
+    @FindBy(xpath = "//a[text()='Desktops']")
+    WebElement desktopDropDown;
+    @FindBy(xpath = "//a[text()='Software']")
+    WebElement softwareDropDown;
+    @FindBy(xpath = "//a[text()='About Us']")
+    WebElement aboutUsFooterMenu;
+
+
+
+
 
     public void loginPage(String email, String password) {
         emailId.sendKeys(email);
@@ -91,6 +121,40 @@ public class LoginPage extends BasePage {
         inputPassword.sendKeys("qwerty");
         loginButton.click();
         Assert.assertEquals(true,qwertyInput.isDisplayed() );
+
+    }
+    public void passwordChange() throws InterruptedException {
+        emailId.sendKeys("pavanoltraining@gmail.com");
+        inputPassword.sendKeys("12345");
+        loginButton.click();
+        passwordChangeField.click();
+        newPasswordTextField.sendKeys("12345");
+        confirmNewPasswordTextField.sendKeys("12345");
+        confirmButton.click();
+        myAccountMenu.click();
+        logoutButton.click();
+        myAccountMenu.click();
+        Thread.sleep(3000);
+        reloginButton.click();
+        emailId.sendKeys("pavanoltraining@gmail.com");
+        inputPassword.sendKeys("12345");
+        loginButton.click();
+        driver.quit();
+
+    }
+//    public void loginBack(){
+//        driver.get("https://demo.opencart.com/index.php?route=account/account");
+//    }
+    public void validatingFunctionality(){
+        continueButton.click();
+        waitForElement(3000);
+        accountBreadcrump.click();
+        desktopDropDown.click();
+        softwareDropDown.click();
+        aboutUsFooterMenu.click();
+
+
+//        driver.navigate().back();
 
     }
 }
